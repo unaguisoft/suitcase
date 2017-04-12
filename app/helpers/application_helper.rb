@@ -68,6 +68,14 @@ module ApplicationHelper
       end
     end
   end
+  
+  def is_me?(user)
+    logged_in? && current_user == user
+  end
+
+  def is?(role)
+    current_user.is?(role)
+  end
 
 end
 
