@@ -80,8 +80,11 @@ class UsersController < ApplicationController
   end
 
   def add_current_user_to_params
+    unless params[:user_filter]
+      params[:user_filter] = {}
+    end
     params[:user_filter][:current_user_id] = current_user.id
-
+    
     params
   end
 

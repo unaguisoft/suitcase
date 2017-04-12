@@ -22,7 +22,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       get users_path
       assert_response :success
       assert_not_nil assigns(:presenter)
-      assert_equal User.but(users(:ross).id).count, assigns(:presenter).send(:users).send(:count)
+      assert_equal User.count, assigns(:presenter).send(:users).send(:count)
     end
 
     test "should get new user" do
