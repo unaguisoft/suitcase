@@ -20,6 +20,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 gem 'sorcery', '~> 0.9.1'
 gem 'non-stupid-digest-assets'
 gem 'platform-api'
+
 group :development, :test do
   gem 'pry'
   gem 'letter_opener'

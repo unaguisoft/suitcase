@@ -1,0 +1,48 @@
+<h1></h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <% if @user.password.blank? %>
+          <h3 class="box-title">Choose a password</h3>
+        <% else %>
+          <h3 class="box-title">Choose a new password</h3>
+        <% end %>
+        <%= link_to 'Sign in', root_path, class: 'pull-right' %>
+      </div>
+      <div class="box-body">
+        <%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+              <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <fieldset class="form-group has-feedback">
+            <%= f.label :email %><br />
+            <%= @user.email %>
+          </fieldset>
+          <fieldset class="form-group has-feedback">
+            <%= fa_icon :lock, class: "fa-fw form-control-feedback" %>
+            <%= f.password_field :password, class: 'form-control', placeholder: 'New password' %>
+          </fieldset>
+          <fieldset class="form-group has-feedback">
+            <%= fa_icon :lock, class: "fa-fw form-control-feedback" %>
+            <%= f.password_field :password_confirmation, class: 'form-control',
+              placeholder: 'Password confirmation'%>
+          </fieldset>
+          <div class="text-center">
+            <%= submit_tag "Change my password!", class: 'btn btn-primary', data: { 'disable-with' => 'Wait...' } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
