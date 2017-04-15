@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412190922) do
+ActiveRecord::Schema.define(version: 20170415140947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.string   "dimensions",                      null: false
+    t.float    "weight",            default: 0.0, null: false
+    t.integer  "stock",             default: 0,   null: false
+    t.float    "insurance_percent", default: 0.0, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image_uid",   null: false
+    t.string   "image_name",  null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_photos_on_category_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                       null: false
@@ -30,4 +49,5 @@ ActiveRecord::Schema.define(version: 20170412190922) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
   end
 
+  add_foreign_key "photos", "categories"
 end

@@ -1,0 +1,27 @@
+<div class="box box-primary">
+
+  <div class="box-header with-border">
+    <h3 class="box-title">
+      <span class="fa fa-photo"></span>
+      Images <span class="text-muted" style="font-size: 13px;"> (Drag and Drop images or select them manually)</span>
+    </h3>
+  </div>
+
+  <div class="box-body">
+
+    <input id="fileupload" type="file" name="category_photo[image]"
+        data-url="<%= url_for([:category, :photos, category_id: category]) %>" multiple>
+    <br />
+
+    <div id="js-progress-bar" class="progress xs">
+      <div class="progress-bar progress-bar-aqua"></div>
+    </div>
+
+    <br />
+
+    <ul class="row photos" id="js-photos">
+      <%= render category.photos %>
+    </ul>
+
+  </div>
+</div>

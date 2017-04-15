@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+samsonite:
+  name: 'Samsonite XL'
+  dimensions: '10x30x20'
+  weight: 2.7
+  stock: 10
+  insurance_percent: 2.0
+
+delsey:
+  name: 'Delsey XS'
+  dimensions: '10x10x20'
+  weight: 4.5
+  stock: 1
+  insurance_percent: 1.5

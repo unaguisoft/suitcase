@@ -1,0 +1,15 @@
+<li id="<%= dom_id(photo) %>" class="col-xs-2 item text-center">
+  <% if /image/ =~ photo.image.mime_type %>
+    <%= image_tag(photo.image.thumb('200x200#').url, class: 'img-thumbnail') %>
+  <% else %>
+    <%= image_tag("http://placehold.it/150x150/3c8dbc/ffffff&amp;text=#{photo.image.name}",
+                    class: 'img-thumbnail') %>
+  <% end %>
+  <div class="photo-actions">
+    <%= link_to icon('external-link'), photo.image.url, class: 'btn btn-xs btn-primary',
+           target: :blank %>
+    <%= link_to icon('trash'), photo, method: :delete, class: 'btn btn-xs btn-danger',
+      data: { confirm: '¿Are you sure?', 'disable-with' => 'deleting' }, remote: true  %>
+  </div>
+
+</li>

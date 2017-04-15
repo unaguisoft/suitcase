@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image_uid: MyString
+  image_name: MyString
+  category: samsonite
+
+two:
+  image_uid: MyString
+  image_name: MyString
+  category: delsey

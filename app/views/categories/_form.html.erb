@@ -1,0 +1,35 @@
+<%= form_for @category do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Category name' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :dimensions %><br>
+    <%= f.text_field :dimensions, class: 'form-control', placeholder: 'Length x Height x Width' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight, class: 'form-control', placeholder: 'Weight in pounds' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :stock %><br>
+    <%= f.number_field :stock, class: 'form-control', placeholder: 'Available stock' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :insurance_percent, 'Insurance percentage (%)' %><br>
+    <%= f.number_field :insurance_percent, class: 'form-control', placeholder: 'Insurance percentage (%)' %>
+  </fieldset>
+
+  <% if @category.persisted? %>
+    <p> Aquí van fotos </p>
+  <% end %>
+
+  <div class="actions">
+    <%= link_to t(:back), categories_path, class: 'btn btn-default', data: {'disable-with' => 'Wait...'} %>
+    <%= f.submit 'Save Category', class: 'btn btn-primary', data: {'disable-with' => 'Wait...'} %>
+  </div>
+<% end %>

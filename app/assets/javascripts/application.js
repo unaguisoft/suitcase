@@ -25,3 +25,4 @@
 //= require init
 //= require utilities
 //= require utilities/confirmation_box
+//= require categories

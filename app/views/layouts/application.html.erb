@@ -11,7 +11,9 @@
     <%= render 'application/aside' %>
 
     <article class="content-wrapper">
-      <%= yield %>
+      <section class="content">
+        <%= yield %>
+      </section>
       <section id="snackbar-container">
         <%= flash_messages if flash %>
       </section>

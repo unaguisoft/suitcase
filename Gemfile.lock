@@ -71,6 +71,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     database_cleaner (1.5.3)
+    dragonfly (1.1.1)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack (>= 1.3)
     draper (3.0.0.pre1)
       actionpack (~> 5.0)
       activemodel (~> 5.0)
@@ -251,6 +255,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   database_cleaner
+  dragonfly (~> 1.1.1)
   draper (~> 3.0.0.pre1)
   font-awesome-rails
   hirb (~> 0.7.3)

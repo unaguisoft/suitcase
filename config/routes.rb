@@ -8,4 +8,12 @@ Rails.application.routes.draw do
   resources :users
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:create, :edit, :update, :new]
+  
+  resources :categories, except: [:show] do
+    get 'upload_category_photos', to: 'categories#upload_category_photos', on: :member
+    match 'photos', via: [:post, :patch], to: 'photos#create'
+  end
+
+  resources :photos, only: [:destroy]
+  
 end
