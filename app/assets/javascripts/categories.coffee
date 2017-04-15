@@ -34,5 +34,5 @@ class App.CategoryForm
 # --------------------------------
 # --------------------------------
 $(document).on "turbolinks:load page:change", ->
-  App.category_form = new App.CategoryForm() unless $(".categories.new, .categories.edit, .categories.create, .categories.update, .categories.upload_category_photo").length == 0
+  App.category_form = new App.CategoryForm() unless $(".categories.new, .categories.edit, .categories.create, .categories.update, .categories.upload_category_photos").length == 0
 

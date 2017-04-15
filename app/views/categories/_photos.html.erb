@@ -9,15 +9,15 @@
 
   <div class="box-body">
 
-    <input id="fileupload" type="file" name="category_photo[image]"
+    <input id="fileupload" type="file" name="photo[image]"
         data-url="<%= url_for([:category, :photos, category_id: category]) %>" multiple>
-    <br />
+    <br>
 
     <div id="js-progress-bar" class="progress xs">
       <div class="progress-bar progress-bar-aqua"></div>
     </div>
 
-    <br />
+    <br>
 
     <ul class="row photos" id="js-photos">
       <%= render category.photos %>

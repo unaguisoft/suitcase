@@ -8,6 +8,6 @@ class Photo < ApplicationRecord
 
   # -- Validations
   validates :category, presence: true
-  validates :image_uid, presence: true
-  validates :image_name, presence: true
+  # validates :image_uid, presence: true
+  # validates :image_name, presence: true
 end

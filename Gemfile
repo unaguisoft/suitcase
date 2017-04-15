@@ -21,6 +21,7 @@ gem 'sorcery', '~> 0.9.1' # Authentication
 gem 'non-stupid-digest-assets'
 gem 'platform-api'
 gem 'dragonfly', '~> 1.1.1' # Image uploads
+gem 'jquery-fileupload-rails'
 
 group :development, :test do
   gem 'pry'

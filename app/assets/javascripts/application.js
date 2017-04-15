@@ -21,6 +21,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require bootbox.min
+//= require jquery.fileupload
 
 //= require init
 //= require utilities

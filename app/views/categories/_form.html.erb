@@ -25,7 +25,11 @@
   </fieldset>
 
   <% if @category.persisted? %>
-    <p> Aquí van fotos </p>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render partial: "categories/photos", locals: { category: @category } %>
+      </div>
+    </div>
   <% end %>
 
   <div class="actions">
