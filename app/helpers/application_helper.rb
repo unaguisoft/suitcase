@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+  def full_title(page_title)
+    base_title = "Luggage"
+    if page_title.empty?
+      base_title
+    else
+      "#{page_title} | #{base_title}"
+    end
+  end
+
   def flash_message(klass, message)
     snack_klass = "#{klass} callout "
     snack_klass += 'callout-success' if klass == 'success'
@@ -68,7 +77,7 @@ module ApplicationHelper
       end
     end
   end
-  
+
   def is_me?(user)
     logged_in? && current_user == user
   end

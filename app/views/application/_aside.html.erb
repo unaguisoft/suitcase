@@ -2,11 +2,9 @@
   <section class="sidebar">
 
     <ul class="sidebar-menu">
-      <%= side_link text: 'Users', path: [:users], icon_class: 'user' %>
-    </ul>
-
-    <ul class="sidebar-menu">
-      <%= side_link text: 'Categories', path: [:categories], icon_class: 'suitcase' %>
+      <%= side_link text: 'Home', path: root_path, icon_class: 'dashboard' %>
+      <%= side_link text: 'Users', path: users_path, icon_class: 'user' %>
+      <%= side_link text: 'Categories', path: categories_path, icon_class: 'suitcase' %>
     </ul>
 
   </section>

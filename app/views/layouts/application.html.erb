@@ -10,10 +10,8 @@
 
     <%= render 'application/aside' %>
 
-    <article class="content-wrapper">
-      <section class="content">
-        <%= yield %>
-      </section>
+    <article class="content-wrapper" style="min-height: 950px">
+      <%= yield %>
       <section id="snackbar-container">
         <%= flash_messages if flash %>
       </section>

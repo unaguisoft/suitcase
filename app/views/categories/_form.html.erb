@@ -1,27 +1,39 @@
 <%= form_for @category do |f| %>
   <fieldset class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Category name' %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Category name', required: true %>
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :dimensions %><br>
-    <%= f.text_field :dimensions, class: 'form-control', placeholder: 'Length x Height x Width' %>
+    <%= f.label :dimensions %>
+    <%= f.text_field :dimensions, class: 'form-control', placeholder: 'Length x Height x Width', required: true %>
+  </fieldset>
+
+  <div class="row">
+    <div class="col-md-6">
+      <fieldset class="form-group">
+        <%= f.label :weight %>
+        <%= f.number_field :weight, class: 'form-control', placeholder: 'Weight in pounds' %>
+      </fieldset>
+    </div>
+  </div>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :stock %>
+        <%= f.number_field :stock, class: 'form-control', placeholder: 'Available stock' %>
+      </div>
+    </div>
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :weight %><br>
-    <%= f.number_field :weight, class: 'form-control', placeholder: 'Weight in pounds' %>
-  </fieldset>
-
-  <fieldset class="form-group">
-    <%= f.label :stock %><br>
-    <%= f.number_field :stock, class: 'form-control', placeholder: 'Available stock' %>
-  </fieldset>
-
-  <fieldset class="form-group">
-    <%= f.label :insurance_percent, 'Insurance percentage (%)' %><br>
-    <%= f.number_field :insurance_percent, class: 'form-control', placeholder: 'Insurance percentage (%)' %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :insurance_percent, 'Insurance percentage (%)' %>
+        <%= f.number_field :insurance_percent, class: 'form-control', placeholder: 'Insurance percentage (%)' %>
+      </div>
+    </div>
   </fieldset>
 
   <% if @category.persisted? %>
@@ -33,7 +45,8 @@
   <% end %>
 
   <div class="actions">
+    <hr>
     <%= link_to t(:back), categories_path, class: 'btn btn-default', data: {'disable-with' => 'Wait...'} %>
-    <%= f.submit 'Save Category', class: 'btn btn-primary', data: {'disable-with' => 'Wait...'} %>
+    <%= f.submit 'Save Category', class: 'btn btn-success', data: {'disable-with' => 'Saving...'} %>
   </div>
 <% end %>
